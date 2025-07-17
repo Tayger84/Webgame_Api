@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block title %}Nahrávání souborů | Uploading page{% endblock title %}
+{% block css_file %}{% endblock css_file %}
+
+{% block content %}
+    <h1>Vlož html stránku uloženou z Detaily Aliance:</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="alifile" accept=".html">
+        <button>Nahrát</button>
+    </form>
+    {% if error %}
+        <p>Neplatný typ souboru. Správný soubor musí mít koncovku <b>.html</b></p>
+    {% endif %}
+    {% if success %}
+        <p>Sobor se podařilo nahrát.</p>
+    {% endif %}
+
+
+{% endblock content %}
