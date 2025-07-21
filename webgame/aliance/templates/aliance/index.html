@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Úvodní strana | Home page{% endblock title %}
+{% block css_file %}
+    <link rel="stylesheet" href="{% static "aliance/index.css" %}">
+{% endblock css_file %}
+
+{% block content %}
+<section>
+    <header>
+        <h1>Vítejte v aplikaci pro správu vaší aliance v online hře</h1> <a href="https://www.webgame.cz/">Webgame.cz</a>
+        <p>Vyberte si z následujících možností:</p>
+    </header>
+    <div class="upload">
+        <a href="#">Přihlásit</a>
+        <a href="{% url "upload" %}">Nahrát nové soubory</a>
+        <a href="#">Zobrazit alianci</a>
+    </div>    
+</section>
+{% endblock content %}

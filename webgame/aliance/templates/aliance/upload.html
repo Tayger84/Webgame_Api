@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Upload information{% endblock title %}
+{% block css_file %}{% endblock css_file %}
+
+{% block content %}
+    <h1>Nahraj soubory s koncovkou .html</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% if upload_file.ali_view.errors %}
+            <div>{{ upload_file.ali_view.errors }}</div>
+        {% endif %}
+        {{ upload_file.ali_view}}
+        <button>Nahrát</button>
+    </form>
+{% endblock content %}
