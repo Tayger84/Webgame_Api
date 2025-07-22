@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from .forms import Upload
+from . import models
+from bs4 import BeautifulSoup
+import io
 
 def index(request):
     return render(request, 'aliance/index.html')
