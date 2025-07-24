@@ -1,0 +1,4 @@
+Země vlastnosti 
+
+hrac, name, snapshot, number, odehrana_kola, volna_kola, zasobnik
+
