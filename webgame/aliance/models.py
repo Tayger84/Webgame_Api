@@ -13,8 +13,7 @@ class Aliance(models.Model):
 
 class Hrac(models.Model):
     name = models.CharField(max_length=100)
-    number = models.IntegerField()
-    alance = models.ForeignKey(Aliance, related_name='hraci', on_delete=models.CASCADE)
+    aliance = models.ForeignKey(Aliance, related_name='hraci', on_delete=models.CASCADE)
     
     def __str__(self):
         return self.name

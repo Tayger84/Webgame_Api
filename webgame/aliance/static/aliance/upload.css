@@ -1,0 +1,74 @@
+ body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-area {
+    background-color: white;
+    color: black;
+    font-family: helvetica;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    justify-content: flex-start;
+    align-items: center;
+    border: 5px solid rgb(102, 102, 101);
+    border-radius: 15px;
+    min-height: 80vh;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.header {
+    width: 100%;
+    background-color: #a67ef1; 
+    padding: 20px;
+    margin-bottom: 20px;
+    border-bottom: 4px double black;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow:
+        inset 0 -2px 4px rgba(255, 255, 255, 0.3), 
+        inset 0 2px 6px rgba(0, 0, 0, 0.2),        
+        0 2px 6px rgba(0, 0, 0, 0.3);             
+}
+
+.header h1 {
+
+    margin: 0;
+    color: yellow;
+    text-shadow: 1px 1px 3px black;
+    font-size: 28px;
+
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.drop-area {
+    border: 2px dashed #aaa;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s;
+}
+
+.drop-area.dragover {
+    background-color: #e0f7fa;
+    border-color: #00acc1;
+}
+
+
+
+

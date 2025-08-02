@@ -1,7 +1,7 @@
 from django import forms
 
-class Upload(forms.Form):
-    # title = forms.CharField(max_length=100, required=False)
+class UploadFileForm(forms.Form):
+
     ali_view = forms.FileField(
         label="Přehled Aliance",
         required=False,
@@ -9,15 +9,18 @@ class Upload(forms.Form):
     )
     ali_detail = forms.FileField(
         label="Detaily Aliance",
-        required=True,
+        required=False,
         widget= forms.FileInput(attrs={'accept' : '.html'}),
-    )
+    ) # required True
     
-    def clean_html_file(self):
-        file = self.cleaned_data['html_file']
-        if not file.name.endswith('.html'):
-            raise forms.ValidationError("Soubor musí mít příponu .html")
-        if file.content_type != 'text/html':
-            raise forms.ValidationError("Soubor není platný HTML dokument")
-        file.seek(0)
+    def clean_ali_view(self):
+        file = self.cleaned_data.get('ali_view')
+        if file and not file.name.endswith('.html'):
+            raise ValidationError("Soubor musí mít koncovku .html")
+        return file
+    
+    def clean_ali_detail(self):
+        file = self.cleaned_data.get('ali_detail')
+        if file and not file.name.endswith('.html'):
+            raise ValidationError("Soubor musí mít koncovku .html")
         return file
